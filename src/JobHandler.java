@@ -24,18 +24,48 @@ public class JobHandler {
 		int currentRank = 0;
 		int warningDeRank = 0;
 		
+		if (yearlySalary <10000)
+			currentRank = 20;
+		else if(yearlySalary <50000)
+			currentRank =40;
+		else if(yearlySalary <100000)
+			currentRank = 60;
+		else if(yearlySalary >=100000)
+			currentRank =80;
 		//Add Code Here [You have to use Switch and If/Else to get graded] 
-		
-		return currentRank - warningDeRank;
+		switch(warningTotals){
+		case 0:
+			break;
+		case 1:
+			warningDeRank += 5;
+			break;
+		case 2:
+			warningDeRank += 10;
+			break;
+		case 3:
+			warningDeRank += 15;
+			break;
+			default:
+				warningDeRank = warningTotals*6;
+				break;
+					
 	}
+		return currentRank - warningDeRank;	
 	
+		
+	}
 	/**
 	 * A method that helps determine if an employee qualifies for a job.
 	 * To determine if the employee qualifies we need to meet the following requirements:
 	 * 1. The job must me available
 	 * 2. The employee's rank must be higher than 0
 	 * 3. To know if an employee qualify,
-	 *    simply check if the employee rank is higher or equal to the job's rank
+	 *    simply cheswitch(warningTotals){
+	case 0:
+		break;
+	case 1:
+		warningDeRank += 5;
+		break;ck if the employee rank is higher or equal to the job's rank
 	 * 		a) If the user has a seniority of 1, the user gains a 5 rank bonus
 	 * 		b) If the user has a seniority of 2, the user gains a 10 rank bonus
 	 * 		c) If the user has a seniority of 3, the user gains a 20 rank bonus
