@@ -60,12 +60,7 @@ public class JobHandler {
 	 * 1. The job must me available
 	 * 2. The employee's rank must be higher than 0
 	 * 3. To know if an employee qualify,
-	 *    simply cheswitch(warningTotals){
-	case 0:
-		break;
-	case 1:
-		warningDeRank += 5;
-		break;ck if the employee rank is higher or equal to the job's rank
+	 *    simply check if the employee rank is higher or equal to the job's rank
 	 * 		a) If the user has a seniority of 1, the user gains a 5 rank bonus
 	 * 		b) If the user has a seniority of 2, the user gains a 10 rank bonus
 	 * 		c) If the user has a seniority of 3, the user gains a 20 rank bonus
@@ -83,6 +78,23 @@ public class JobHandler {
 		
 		//Add Code Here [You have to use Switch and If/Else to get graded]
 		
-		return qualify; 
+		switch (seniority){
+		case 1:
+			eRank += 5;
+		break;
+		case 2:
+			eRank += 10;
+		break;
+		case 3:
+		eRank += 20;
+		break;
+		}
+		
+	
+	if(eRank>=jobRank || !jobType){
+		 qualify =true;
 	}
+	return qualify;
 }
+}
+	
